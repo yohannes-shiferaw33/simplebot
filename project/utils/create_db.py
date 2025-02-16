@@ -13,7 +13,6 @@ async def create_db():
     curs.close()
     conn.close()
     try:
-        print(CONNECT_DB)
         async with await psycopg.AsyncConnection.connect(CONNECT_DB) as conn:
             async with conn.cursor() as curs:
                 await curs.execute(
