@@ -1,4 +1,2 @@
 [phases.setup]
 nixpkgs = ['python3.12', 'gcc']
-[phases.install]
-cmds = ["pip install --no-cache-dir -r requirements.txt"]
