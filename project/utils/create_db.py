@@ -6,12 +6,14 @@ async def create_db():
     conn.autocommit=True
     curs=conn.cursor()
     try:
+        curs.execute(f'DROP DATABASE IF EXISTS info')
         curs.execute(f'CREATE DATABASE info WITH OWNER=postgres ENCODING=\'UTF8\'')
     except Exception as e:
         pass
     curs.close()
     conn.close()
     try:
+        print(CONNECT_DB)
         async with await psycopg.AsyncConnection.connect(CONNECT_DB) as conn:
             async with conn.cursor() as curs:
                 await curs.execute(
