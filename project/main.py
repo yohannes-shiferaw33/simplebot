@@ -3,7 +3,7 @@ from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.types import Message
 from aiogram.filters import Command
-from config import BOT_TOKEN, ADMIN_ID, CONNECT_DB
+from config import BOT_TOKEN, ADMIN_ID, CONNECT_DB, DB_URL
 from utils.create_db import create_db
 from aiogram.enums import ParseMode
 from handlers.form import router
@@ -16,7 +16,7 @@ bot = Bot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTM
 dp = Dispatcher()
 
 async def create_pool():
-    return psycopg_pool.AsyncConnectionPool(CONNECT_DB)
+    return psycopg_pool.AsyncConnectionPool(DB_URL)
 
 
 async def start():
