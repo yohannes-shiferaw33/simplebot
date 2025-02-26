@@ -1,2 +1,0 @@
-[phases.setup]
-nixpkgs = ['python3.12', 'gcc']
