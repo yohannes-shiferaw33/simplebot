@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "functions": {
+    "project/main.py": {
+      "runtime": "python3.12.5"
+    }
+  }
+}
